@@ -11,6 +11,7 @@ maven
 解释：
 RegistryServer 这个是Eureka的维护服务器列表的一个地方，可访问http://localhost:8761查看当前运行的服务器
 代码：
+```
 @SpringBootApplication
 @EnableEurekaServer
 public class DemoApplication {
@@ -18,7 +19,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 }
-
+```
 
 Service1，Service2 是两个服务器，服务名叫eurekaclient
 Service1代码：
