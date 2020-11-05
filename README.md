@@ -23,6 +23,7 @@ public class DemoApplication {
 
 Service1，Service2 是两个服务器，服务名叫eurekaclient
 Service1代码：
+```
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
@@ -35,8 +36,10 @@ public class DemoApplication {
       return "In service1";
    }
 }
+```
 
 Service2代码：
+```
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
@@ -49,10 +52,11 @@ public class DemoApplication {
       return "In service2";
    }
 }
-
+```
 
 ApplicationServer 这个是调用的地方，访问 http://localhost:8081/getName，会被Service1，Service2 轮流响应，即使其中一个坏掉，也可以正常访问http://localhost:8081/getName
 代码：
+```
 @Autowired
 RestTemplate restTemplate;
 
@@ -70,7 +74,7 @@ public String getStudents()
 public RestTemplate restTemplate() {
 	return new RestTemplate();
 }
-
+```
 
 
 
